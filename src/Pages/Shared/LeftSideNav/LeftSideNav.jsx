@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     fetch('categories.json')
       .then((res) => res.json())
       .catch((data) => setCategories(data));
   }, []);
+  console.log(categories);
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl">Left Side</h2>
+      <h2 className="text-2xl">Left sSide</h2>
       {categories.map((category) => (
         <Link
           to={`/category/${category.id}`}
