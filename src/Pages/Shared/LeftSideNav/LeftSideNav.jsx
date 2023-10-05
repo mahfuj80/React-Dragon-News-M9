@@ -7,7 +7,7 @@ const LeftSideNav = () => {
   useEffect(() => {
     fetch('categories.json')
       .then((res) => res.json())
-      .catch((data) => setCategories(data));
+      .then((data) => setCategories(data));
   }, []);
   console.log(categories);
   return (
